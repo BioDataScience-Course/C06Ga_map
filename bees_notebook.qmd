@@ -1,0 +1,28 @@
+---
+title: "Cartographie des abeilles sauvages en Belgique en 2016"
+author: "___"
+date: "`r Sys.Date()`"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    toc: true
+editor: visual
+lang: fr
+bibliography: "biblio/references.bib"
+---
+
+# Introduction
+
+Le projet BELBEES a étudié le déclin des abeilles sauvages en Belgique [@rasmont2019].
+
+# Cartes
+
+```{r setup, include=FALSE}
+# Configuration de l'environnement
+SciViews::R(___)
+```
+
+<!--% Réalisez au moins deux cartes par étudiant. Commentez-les et justifiez vos choix. Utilisez autant de chunks que nécessaire et vérifiez que votre document compile (bouton 'Rendu') sans erreur à la fin de votre travail. -->
+
+# Bibliographie

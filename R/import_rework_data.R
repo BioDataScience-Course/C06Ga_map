@@ -7,13 +7,13 @@
 # rendre l'analyse reproductible (il faut que toutes les étapes de votre analyse
 # puissent être reproduites à partir du clonage de votre dépôt Github).
 
-# Packages ----
-SciViews::R("spatial")
+# Configuration de l'environnement
+SciViews::R("spatial", lang = "fr")
 # également nécessaires, mais non chargés directement
 #library(mapview)
 #library(pryr)
 
-# Importation des données brutes ----
+# Importation des données brutes
 # Si le sous-dossier data/raw n'existe pas, nous récupérons les données
 if (!file.exists("data/raw")) {
   dir.create("data/raw")
@@ -37,7 +37,7 @@ bee <- read$tsv(bee_data)
 table(bee$year)
 
 # On se concentre sur les observations de 2016
-bee_2016 %<-% filter(bee, year == "2016")
+bee_2016 <- filter(bee, year == "2016")
 str(bee_2016)
 class(bee_2016)
 nrow(bee_2016)
@@ -54,7 +54,7 @@ class(bee_2016_sf)
 # mégarde le fichier de départ!
 #write$rds(bee_2016_sf, "data/wild_bees_belgium.rds", compress = "xz")
 
-# Carte de Belgique ----
+# Carte de Belgique
 # Les données proviennent de
 # https://www.geo.be/catalog/details/fb1e2993-2020-428c-9188-eb5f75e284b9?l=fr
 # Elles sont aussi stockées sous une forme directement téléchargeable dans R
@@ -70,6 +70,6 @@ pryr::object_size(be)
 # Note: cette instruction est commentée pour éviter de les écraser par mégarde
 #write_sf(obj = be, dsn = "data/map_belgium/belgium.shp")
 
-# Vérification finale ---
+# Vérification finale
 bee <- st_as_sf(read("data/wild_bees_belgium.rds"))
 mapview::mapview(bee)

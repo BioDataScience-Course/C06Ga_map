@@ -1,7 +1,7 @@
 # Carte exemple
 
-# Packages ----
-SciViews::R("spatial")
+# Configuration de l'environnementt
+SciViews::R("spatial", lang = "fr")
 
 # Importation des données
 be <- st_read("data/map_belgium/belgium.shp")
